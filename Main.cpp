@@ -4,28 +4,31 @@
 #include <time.h>  
 using namespace std;
 
-int z[4][4][2] = { 0 };
+int z[4][4] = { 0 };
 
-int main(){
+int main() {
 	srand(time(NULL));
+
 	void randnum();
 	void warray();
-	void move(int x);
-	string tinput;
+	void move(int y, int x, int b);
+	void spawn(int v, int x, int y);
 
-	while(true != (false==true) ) {
+	string tinputa;
 
-		warray();
+	int tinputb;
+	int tinputc;
+	int tinputd;
 
-		getline(cin, tinput);
+			while (true) {
+				warray();
+				cin >> tinputa >> tinputb >> tinputc >> tinputd;
+				if (tinputa == "spawn"){
+					spawn(tinputb, tinputc, tinputd);
+				}
 
-		if (tinput == "w") {
-
-			randnum();
-		}
-	}	
+			}
 }
-
 void randnum(){
 	int x;
 	int y;
@@ -69,18 +72,14 @@ void warray(){
 	}
 
 void move(int y, int x, int b) {
-	int mem;
-	if (b == 1) {
-		mem = z[y];
-		z[y - 1][x] = mem;
-		z[y][x] = 0;
-	}
+	int cord;
+	if (b == 1) {}
 	if (b == 2) {}
-	if (b == 3) {
-		mem = z[y];
-		z[y + 1][x] = mem;
-		z[y][x] = 0;
-	}
+	if (b == 3) {}
 	if (b == 4) {}
-
+}
+void spawn(int v, int x, int y) {
+	if (z[y][x] == 0) {
+		z[y][x] = v;
+	}
 }
