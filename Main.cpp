@@ -1,25 +1,46 @@
 #include <string>
-#include <iostream>
-#include <edving in project>
+#include <iostream>     
+#include <stdlib.h>   
+#include <time.h>  
 using namespace std;
 
 int z[4][4] = { 0 };
 
 int main(){
-	
+	srand(time(NULL));
+	void randnum();
 	void warray();
-	string 2048input;
+	string tinput;
 
 	while(true != (false==true) ) {
 
 		warray();
 
-		getline(cin, 2048input);
-	}
+		getline(cin, tinput);
 
-	system("pause");
-	return 0;
+		if (tinput == "w") {
+
+			randnum();
+		}
+	}	
 }
+
+void randnum(){
+	int x;
+	int y;
+	int i = 0;
+	while (i == 0) {
+		
+		x = rand()%4;
+		y = rand()%4;
+		 
+		if (z[y][x] == 0) {
+			z[y][x] = 2;   
+			i++;
+		}	      
+	}
+}
+
 
 void warray(){
 
