@@ -35,12 +35,22 @@ void randnum(){
 		y = rand()%4;
 		 
 		if (z[y][x] == 0) {
-			z[y][x] = 2;   
+	 
+		
+
+			if ((rand() % 9) > 8 ){
+
+				z[y][x] = 4;
+
+			}
+			else {
+
+				z[y][x] = 2;
+			  }
 			i++;
 		}	      
 	}
 }
-
 
 void warray(){
 
