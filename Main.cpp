@@ -4,12 +4,13 @@
 #include <time.h>  
 using namespace std;
 
-int z[4][4] = { 0 };
+int z[4][4][2] = { 0 };
 
 int main(){
 	srand(time(NULL));
 	void randnum();
 	void warray();
+	void move(int x);
 	string tinput;
 
 	while(true != (false==true) ) {
@@ -38,7 +39,7 @@ void randnum(){
 	 
 		
 
-			if ((rand() % 9) > 8 ){
+			if ((rand() % 9) > 7 ){
 
 				z[y][x] = 4;
 
@@ -67,3 +68,19 @@ void warray(){
 	}
 	}
 
+void move(int y, int x, int b) {
+	int mem;
+	if (b == 1) {
+		mem = z[y];
+		z[y - 1][x] = mem;
+		z[y][x] = 0;
+	}
+	if (b == 2) {}
+	if (b == 3) {
+		mem = z[y];
+		z[y + 1][x] = mem;
+		z[y][x] = 0;
+	}
+	if (b == 4) {}
+
+}
