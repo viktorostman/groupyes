@@ -13,6 +13,7 @@ int main() {
 	void warray();
 	void move(int y, int x, int b);
 	void spawn(int v, int x, int y);
+	void del(int x, int y);
 
 	string tinputa;
 
@@ -22,10 +23,14 @@ int main() {
 
 			while (true) {
 				warray();
-				cin >> tinputa >> tinputb >> tinputc >> tinputd;
-				if (tinputa == "spawn"){
+				cin >> tinputa;
+				if (tinputa == "spawn") {
+					cin >> tinputb >> tinputc >> tinputd;
 					spawn(tinputb, tinputc, tinputd);
-				
+				}
+				if (tinputa == "del") {
+					cin >> tinputb >> tinputc;
+					del(tinputb, tinputc);
 				}
 
 			}
@@ -82,5 +87,10 @@ void move(int y, int x, int b) {
 void spawn(int v, int x, int y) {
 	if (z[y-1][x-1] == 0) {
 		z[y-1][x-1] = v;
+	}
+}
+void del(int x, int y) {
+	if (z[y - 1][x - 1] != 0) {
+		z[y - 1][x - 1] = 0;
 	}
 }
