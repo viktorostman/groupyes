@@ -5,6 +5,7 @@
 using namespace std;
 
 int z[4][4] = { 0 };
+bool zceck[4][4] = { 0 };
 
 int main() {
 	srand(time(NULL));
@@ -83,12 +84,18 @@ void warray(){
 
 void move(int b, int x, int y) {
 	void del(int x, int y);
-	int cord;
-	if (b == 1) {
-		for (; z[y - 1][x-1] =) {
+	void spawn(int v, int x, int y);
 
+	if (b == 1) {
+		while (z[y - 2][x - 1] == 0 && y > 1 ) {
+			spawn(z[y-1][x-1], x, y-1);
+			del(x, y);
+			y--;
 		}
-		del(x, y);
+		if (z[y - 2][x - 1] == z[y - 1][x - 1] && zceck[y - 2][x - 1] == 0) {
+			z[y - 2][x - 1] *= 2;
+			zceck[y - 2][x - 1] = true;
+		}
 	}
 	else if (b == 2) {}
 	else if (b == 3) {}
