@@ -25,6 +25,7 @@ int main() {
 				cin >> tinputa >> tinputb >> tinputc >> tinputd;
 				if (tinputa == "spawn"){
 					spawn(tinputb, tinputc, tinputd);
+				
 				}
 
 			}
@@ -79,7 +80,7 @@ void move(int y, int x, int b) {
 	if (b == 4) {}
 }
 void spawn(int v, int x, int y) {
-	if (z[y][x] == 0) {
-		z[y][x] = v;
+	if (z[y-1][x-1] == 0) {
+		z[y-1][x-1] = v;
 	}
 }
