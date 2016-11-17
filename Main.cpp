@@ -92,14 +92,32 @@ void move(int b, int x, int y) {
 			del(x, y);
 			y--;
 		}
-		if (z[y - 2][x - 1] == z[y - 1][x - 1] && zceck[y - 2][x - 1] == 0) {
-			z[y - 2][x - 1] *= 2;
+		if (z[y - 2][x - 1] == z[y - 1][x - 1] && zceck[y - 2][x - 1] == false) {
+			z[y - 2][x - 1] = z[y - 2][x - 1]*2;
 			zceck[y - 2][x - 1] = true;
+			del(x,y);
 		}
 	}
-	else if (b == 2) {}
-	else if (b == 3) {}
-	else if (b == 4) {}
+	else if (b == 2) {
+
+	}
+	else if (b == 3) {
+
+		while (z[y+1][x - 1] == 0 && y > 4) {
+			//spawn(z[y - 1][x - 1], x, y + 1);
+			//del(x, y);
+			//y++;
+			cout << "funkar";
+		}
+		if (z[y - 2][x - 1] == z[y - 1][x - 1] && zceck[y - 2][x - 1] == false) {
+			z[y - 2][x - 1] = z[y - 2][x - 1] * 2;
+			zceck[y - 2][x - 1] = true;
+			del(x, y);
+		}
+	}
+	else if (b == 4) {
+	
+	}
 }
 void spawn(int v, int x, int y) {
 	if (z[y-1][x-1] == 0) {
