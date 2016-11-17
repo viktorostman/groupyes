@@ -11,7 +11,7 @@ int main() {
 
 	void randnum();
 	void warray();
-	void move(int y, int x, int b);
+	void move(int b, int x, int y);
 	void spawn(int v, int x, int y);
 	void del(int x, int y);
 
@@ -31,6 +31,10 @@ int main() {
 				if (tinputa == "del") {
 					cin >> tinputb >> tinputc;
 					del(tinputb, tinputc);
+				}
+				if (tinputa == "move") {
+					cin >> tinputb >> tinputc >> tinputd;
+					move(tinputb, tinputc, tinputd);
 				}
 
 			}
@@ -77,12 +81,18 @@ void warray(){
 	}
 	}
 
-void move(int y, int x, int b) {
+void move(int b, int x, int y) {
+	void del(int x, int y);
 	int cord;
-	if (b == 1) {}
-	if (b == 2) {}
-	if (b == 3) {}
-	if (b == 4) {}
+	if (b == 1) {
+		for (; z[y - 1][x-1] =) {
+
+		}
+		del(x, y);
+	}
+	else if (b == 2) {}
+	else if (b == 3) {}
+	else if (b == 4) {}
 }
 void spawn(int v, int x, int y) {
 	if (z[y-1][x-1] == 0) {
